@@ -19,12 +19,6 @@ RUN apt-get update && \
 RUN pip install -r requirements.txt
 
 
-RUN git clone https://huggingface.co/OpenBuddy/openbuddy-llama2-70b-v10.1-bf16 && rm -rf openbuddy-llama2-70b-v10.1-bf16/.git
+RUN git clone https://huggingface.co/deepseek-ai/deepseek-coder-33b-instruct && rm -rf deepseek-coder-33b-instruct/.git
 
 COPY . .
-
-RUN chmod +x run.sh
-
-EXPOSE 9612
-
-CMD ./run.sh
